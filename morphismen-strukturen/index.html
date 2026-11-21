@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morphismen &amp; Strukturen</title>
+<link rel="stylesheet" href="katex/katex.min.css">
+<style>
+  :root{--bg:#fbfaf7;--ink:#161616;--mute:#666;--rule:#d6d3cc;--hover:#f0eee8;--good:#1d6b35;--bad:#a3241f;--goodbg:#e9f3ea;--badbg:#f8e9e7}
+  @media (prefers-color-scheme:dark){:root{--bg:#141414;--ink:#e8e6e1;--mute:#999;--rule:#3a3a3a;--hover:#222;--good:#7cc58f;--bad:#ef8b85;--goodbg:#1b2a1f;--badbg:#2e1c1b}}
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.55 KaTeX_Main,"Latin Modern Roman","Computer Modern Serif",Georgia,serif}
+  .page{max-width:700px;margin:0 auto;padding:28px 20px 70px}
+  .head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;border-bottom:1px solid var(--ink);padding-bottom:8px}
+  h1{font-size:24px;font-weight:normal;margin:0;font-variant:small-caps;letter-spacing:.03em}
+  #sub{color:var(--mute);font-size:15px;font-style:italic;margin:2px 0 0}
+  nav{font-size:16px;display:flex;gap:18px;align-items:baseline}
+  nav button{background:none;border:0;padding:0;font:inherit;color:var(--mute);cursor:pointer}
+  nav button.on{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+  nav .sep{color:var(--rule)}
+  button:focus:not(:focus-visible){outline:none}
+  .bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:15px;color:var(--mute);margin:10px 0 26px}
+  #filters{display:flex;gap:16px;flex-wrap:wrap}
+  #filters label{cursor:pointer}
+  #stats{display:flex;gap:16px}
+  .pnum{margin:0 0 4px}
+  .tag{color:var(--mute);font-style:italic;font-size:15px;margin-left:6px}
+  .disp{overflow-x:auto;overflow-y:hidden;padding:2px 0}
+  .disp .katex-display{margin:14px 0}
+  .qn{text-align:center;color:var(--mute);margin:-8px 0 10px;font-size:16px}
+  .ask{margin:6px 0 10px}
+  ol.opts{list-style:none;margin:0 0 6px;padding:0}
+  ol.opts li{margin:0}
+  ol.opts button{display:flex;width:100%;gap:10px;align-items:baseline;text-align:left;background:none;border:0;border-left:3px solid transparent;
+    padding:5px 8px 5px 10px;font:inherit;color:inherit;cursor:pointer}
+  ol.opts button:hover{background:var(--hover)}
+  .lt{flex:none;width:28px;color:var(--mute)}
+  .tx{flex:1}
+  .mk{flex:none;width:18px;font-weight:bold}
+  ol.opts button.good{border-left-color:var(--good);background:var(--goodbg)} ol.opts button.good .mk{color:var(--good)}
+  ol.opts button.bad{border-left-color:var(--bad);background:var(--badbg)} ol.opts button.bad .mk{color:var(--bad)}
+  ol.opts button.insp{outline:1px dashed var(--mute);outline-offset:-1px}
+  .fb{margin-top:14px;border-top:1px solid var(--rule);padding-top:10px}
+  .verdict{margin:0 0 6px}
+  .verdict.g .vw{color:var(--good)} .verdict.b .vw{color:var(--bad)}
+  .insp-note{margin:0 0 6px;color:var(--mute)}
+  .sol{margin:8px 0}
+  .qed{float:right}
+  .row{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px;clear:both}
+  .hint{font-size:14px;color:var(--mute);font-style:italic}
+  .btn{font:inherit;background:none;color:var(--ink);border:1px solid var(--ink);padding:3px 14px;cursor:pointer}
+  .btn:hover{background:var(--hover)}
+  .link{font:inherit;font-size:15px;background:none;border:0;color:var(--mute);text-decoration:underline;cursor:pointer;padding:0}
+  .big{font-size:40px;margin:6px 0 14px}
+  #conv{margin-top:44px;font-size:14px;color:var(--mute);border-top:1px solid var(--rule);padding-top:8px}
+  @media (max-width:520px){body{font-size:17px} .bar{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="head">
+    <div><h1 id="title"></h1></div>
+    <nav>
+      <button id="m-maps"></button><button id="m-structs"></button>
+      <span class="sep">|</span>
+      <span><button id="l-de">DE</button> / <button id="l-en">EN</button></span>
+    </nav>
+  </div>
+  <div class="bar"><div id="filters"></div><div id="stats"></div></div>
+  <div id="problem"></div>
+  <p id="conv"></p>
+</div>
+<script src="katex/katex.min.js"></script>
+<script src="data-hand.js"></script>
+<script src="data-gen.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
